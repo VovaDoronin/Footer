@@ -1,0 +1,79 @@
+-
+    var footerContent = {
+        'Information' : ['<a href="#" class="footer__menu-link">About Us</a>','<a href="#" class="footer__menu-link">About Zip</a>','<a href="#" class="footer__menu-link">Privacy Policy</a>','<a href="#" class="footer__menu-link">Search</a>','<a href="#" class="footer__menu-link">Terms</a>','<a href="#" class="footer__menu-link">Orders and Returns</a>','<a href="#" class="footer__menu-link">Contact Us</a>','<a href="#" class="footer__menu-link">Advanced Search</a>','<a href="#" class="footer__menu-link">Newsletter Subscription</a>'],
+        'PC Parts' : ['<a href="#" class="footer__menu-link">CPUS</a>','<a href="#" class="footer__menu-link">Add On Cards</a>','<a href="#" class="footer__menu-link">Hard Drives (Internal)</a>','<a href="#" class="footer__menu-link">Graphic Cards</a>','<a href="#" class="footer__menu-link">Keyboards / Mice</a>','<a href="#" class="footer__menu-link">Cases / Power Supplies / Cooling</a>','<a href="#" class="footer__menu-link">RAM (Memory)</a>','<a href="#" class="footer__menu-link">Software</a>','<a href="#" class="footer__menu-link">Speakers / Headsets</a>','<a href="#" class="footer__menu-link">Motherboards</a>'],
+        'Desktop PCs' : ['<a href="#" class="footer__menu-link">Custom PCs</a>','<a href="#" class="footer__menu-link">Servers</a>','<a href="#" class="footer__menu-link">MSI All-In-One PCs</a>','<a href="#" class="footer__menu-link">HP/Compaq PCs</a>','<a href="#" class="footer__menu-link">ASUS PCs</a>','<a href="#" class="footer__menu-link">Tecs PCs</a>'],
+        'Laptops' : ['<a href="#" class="footer__menu-link">Evryday Use Notebooks</a>','<a href="#" class="footer__menu-link">MSI Workstation Series</a>','<a href="#" class="footer__menu-link">MSI Prestige Series</a>','<a href="#" class="footer__menu-link">Tablets and Pads</a>','<a href="#" class="footer__menu-link">Netbooks</a>','<a href="#" class="footer__menu-link">Infinity Gaming Notebooks</a>'],
+        'Address' : ['Address: 1234 Street Adress City Address, 1234','Phones:<a href="tell:(00) 1234 5678" class="footer__menu-link_azure-radiance"> (00) 1234 5678</a>','We are open: Monday-Thursday: 9:00 AM - <br>5:30 PM','Friday: 9:00 AM - 6:00 PM','Saturday: 11:00 AM - 5:00 PM','E-mail:<a href="mailto:shop@email.com" class="footer__menu-link_azure-radiance"> shop@email.com</a>']
+    };
+
+-
+    var socials = [{
+        imagePath: 'assets/icons/facebook-icon.png',
+        imageAlt: 'Facebook'
+    },
+    {
+        imagePath: 'assets/icons/instagram-icon.png',
+        imageAlt: 'Instagram'
+    }];
+
+-
+    var cards = [{
+        imagePath: 'assets/images/paypal-image.png',
+        imageAlt: 'PayPal'
+    },
+    {
+        imagePath: 'assets/images/visa-image.png',
+        imageAlt: 'VISA'
+    },
+    {
+        imagePath: 'assets/images/maestro-image.png',
+        imageAlt: 'Maestro'
+    },
+    {
+        imagePath: 'assets/images/discover-image.png',
+        imageAlt: 'DISCOVER'
+    },
+    {
+        imagePath: 'assets/images/american-express-image.png',
+        imageAlt: 'AMERICAN EXPRESS'
+    }];
+       
+footer.footer 
+    .wrapper
+        .footer__wrapper.flex.flex_wrap
+            .footer__inner.flex.flex_column
+                h5.footer__title Sign Up To Our Newsletter.
+                .footer__text Be the first to hear about the latest offers.
+            .footer__box.flex
+                input.footer__input(
+                    type="email"
+                    name="emailaddress"
+                    placeholder="Your Email"
+                )
+                button.footer__button(type="button") Subscribe
+        .footer__menu.flex.flex_wrap
+            each array, key in footerContent
+                .footer__menu-column.accordion
+                    .flex.flex_column
+                        .flex.footer__toggle.accordion__heading
+                            .footer__menu-heading=key
+                            button.footer__button-arrow(type="button")
+                                img.footer-arrow(src="assets/icons/footer-arrow-icon.png", alt="arrow")
+                        ul.footer__menu-list.flex.flex_column
+                            each item in array
+                                li.footer__menu-item !{item}
+        .footer__line
+        .footer__bottom.flex.flex_wrap.flex_content-between.flex_aling-center
+            .footer__bottom-column
+                .footer__social.flex
+                    each social in socials
+                        a(href="#").footer__social-image.flex
+                            img(src=social.imagePath alt=social.imageAlt)
+            .footer__bottom-column.footer__bottom-cards
+                .flex
+                    each card in cards
+                        a(href="#").footer__card-image.flex
+                            img(src=card.imagePath alt=card.imageAlt)
+            .footer__bottom-column
+                .footer__desc Copyright © 2020 Shop Pty. Ltd.                        

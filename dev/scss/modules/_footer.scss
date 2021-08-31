@@ -1,0 +1,385 @@
+.wrapper {
+    max-width: calc(100% - 46px);
+    margin: 0 auto;
+
+    @include respond-to(tablet) {
+        max-width: calc(100% - 132px);
+    }
+
+    @include respond-to(desktop) {
+        max-width: calc(100% - 180px);
+    }
+
+    @include respond-to(desktopHD) {
+        max-width: calc(100% - 522px);
+    }
+}
+
+.footer {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background-color: $color-cinder;
+
+    @include respond-to(tablet) {
+        padding-bottom: 45px;
+    }
+
+    @include respond-to(desktop) {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    @include respond-to(desktopHD) {
+        padding-top: 47px;
+        padding-bottom: 17px;
+    }
+
+    &__wrapper {
+        margin-bottom: 27px;
+        justify-content: space-evenly;
+
+        @include respond-to(tablet) {
+            margin-bottom: 32px;
+            justify-content: space-between;
+        }
+
+        @include respond-to(desktop) {
+            margin-bottom: 37px;
+            justify-content: space-between;
+        }
+
+        @include respond-to(desktopHD) {
+            margin-bottom: 45px;
+            justify-content: space-between;
+        }
+    }
+
+    &__inner {
+        margin-bottom: 15px;
+        padding-right: 7px;
+
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+        }
+
+        @include respond-to(desktop) {
+            padding-right: 64px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        font-family: $p-font-medium, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        color: $color-white;
+        @include font-size(18);
+        line-height: 24px;
+        margin-bottom: 5px;
+
+        @include respond-to(desktop) {
+            @include font-size(25);
+            line-height: 40px;
+            margin-bottom: 9px;
+        }
+
+        @include respond-to(desktopHD) {
+            @include font-size(38);
+            line-height: 50px;
+        }
+    }
+
+    &__text {
+        font-family: $p-font-light, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        color: $color-white;
+        @include font-size(12);
+        line-height: 16px;
+
+        @include respond-to(desktop) {
+            @include font-size(14);
+            line-height: 18px;
+        }
+
+        @include respond-to(desktopHD) {
+            @include font-size(16);
+            line-height: 21px;
+        }
+    }
+
+    &__box {
+        @include respond-to(tablet) {
+            align-items: flex-end;
+        }
+    }
+
+    &__input {
+        background-color: $color-black;
+        border: 2px solid $color-white;
+        border-radius: 4px;
+        padding-left: 10px;
+        width: 186px;
+        height: 38px;
+        margin-right: 13px;
+
+        @include respond-to(tablet) {
+            margin-right: 8px;
+        }
+
+        @include respond-to(desktop) {
+            width: 275px;
+            height: 50px;
+            margin-right: 23px;
+        }
+
+        @include respond-to(desktopHD) {
+            width: 391px;
+        }
+
+        &::placeholder {
+            font-family: $p-font-light, sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            color: $color-white;
+            @include font-size(11);
+            line-height: 20px;
+
+            @include respond-to(desktop) {
+                @include font-size(13);
+            }
+
+            @include respond-to(desktopHD) {
+                @include font-size(14);
+            }
+        }
+    }
+
+    &__button {
+        font-family: $p-font-semi-bold, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        background: $color-blue-ribbon;
+        border: 1px solid $color-blue-ribbon;
+        border-radius: 50px;
+        color: $color-white;
+        width: 130px;
+        height: 38px;
+        @include font-size(13);
+        line-height: 19px;
+
+        @include respond-to(desktop) {
+            width: 151px;
+            height: 50px;
+            @include font-size(14);
+            line-height: 21px;
+        }
+
+        &-arrow {
+            background-color: transparent;
+            border: none;
+            width: 16px;
+            height: 15px;
+            margin-left: auto;
+
+            @include respond-to(desktop) {
+                display: none;
+            }
+        }
+    }
+
+    &__menu {
+        margin-top: -26px;
+        margin-bottom: 30px;
+        flex-direction: column;
+
+        @include respond-to(tablet) {
+            max-width: calc(100% - 47px);
+            margin: -26px auto 27px;
+        }
+
+        @include respond-to(desktop) {
+            max-width: unset;
+            margin: -20px -40px 36px;
+            justify-content: start;
+            flex-direction: row;
+        }
+
+        @include respond-to(desktopHD) {
+            margin: 0 -45px 36px;
+        }
+
+        &-column {
+            border-bottom: 1px solid $color-gray;
+
+            @include respond-to(desktop) {
+                border-bottom: none;
+                padding: 20px 40px;
+            }
+
+            @include respond-to(desktopHD) {
+                padding: 0 45px;
+            }
+        }
+
+        &-heading {
+            font-family: $p-font-bold, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            color: $color-mystic;
+            @include font-size(11);
+            line-height: 11px;
+
+            @include respond-to(desktop) {
+                color: rgba(255, 255, 255, 0.5);
+                @include font-size(13);
+                line-height: 13px;
+                margin-bottom: 10px;
+            }
+
+            @include respond-to(desktopHD) {
+                color: rgba(255, 255, 255, 0.5);
+                @include font-size(14);
+                line-height: 14px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &-list {
+            position: absolute;
+            visibility: hidden;
+            margin-left: 6px;
+            margin-bottom: 12px;
+
+            @include respond-to(tablet) {
+                margin-left: 13px;
+            }
+
+            @include respond-to(desktop) {
+                position: relative;
+                visibility: visible;
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+
+            &_active {
+                position: relative;
+                visibility: visible;
+            }
+        }
+
+        &-item {
+            font-family: $p-font-light, sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            color: $color-white;
+            @include font-size(12);
+            line-height: 23px;
+
+            @include respond-to(desktopHD) {
+                @include font-size(13.5);
+                line-height: 24px;
+                margin-left: 0;
+            }
+        }
+
+        &-link {
+            color: $color-white;
+
+            &_azure-radiance {
+                color: $color-azure-radiance;
+            }
+        }
+    }
+
+    &__line {
+        display: none;
+
+        @include respond-to(desktop) {
+            border: 1px solid $color-white;
+            opacity: 0.2;
+            margin-bottom: 17px;
+            display: flex;
+        }
+    }
+
+    &__bottom {
+        margin: 0 -20px;
+
+        @include respond-to(tablet) {
+            margin: 0 -24px;
+        }
+
+        &-column {
+            padding: 0 20px;
+
+            @include respond-to(tablet) {
+                padding: 0 24px;
+            }
+        }
+
+        &-cards {
+            position: relative;
+            order: 1;
+            margin: 0 auto;
+            margin-top: 27.5px;
+
+            @include respond-to(tablet) {
+                order: 0;
+                margin: 0;
+            }
+        }
+    }
+
+    &__social {
+        @include respond-to(tablet) {
+            width: 150px;
+        }
+
+        @include respond-to(desktop) {
+            width: 200px;
+        }
+
+        &-image {
+            &:nth-child(1) {
+                margin-right: 11px;
+            }
+        }
+    }
+
+    &__card-image {
+        &:nth-child(even) {
+            margin: 0 10px;
+        }
+    }
+
+    &__desc {
+        font-family: $p-font-medium, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        color: $color-white;
+        opacity: 0.6;
+        @include font-size(10);
+        line-height: 13px;
+
+        @include respond-to(desktop) {
+            @include font-size(12);
+            line-height: 16px;
+        }
+    }
+
+    &-arrow {
+        &_top {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.accordion__heading {
+    padding-top: 26px;
+    padding-bottom: 7px;
+
+    @include respond-to(desktop) {
+        padding: 0;
+    }
+}
